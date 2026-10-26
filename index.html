@@ -183,10 +183,11 @@ input.amt{font-family:var(--display);font-size:26px;font-weight:800;font-variant
 /* ====== RÉGLAGES DU VENDEUR : à modifier avant de publier ====== */
 var CONFIG = {
   whatsapp: '22666435588',    // votre numéro WhatsApp avec indicatif, sans + ni espaces. Ex : 22670000000
-  prix: '2 000 F par mois',   // texte affiché pour la version Pro
+  prix: '2 000 F pour 30 jours, ou 7 500 F à vie',   // texte affiché pour la version Pro
   limiteGratuite: 5           // nombre de clients en dette autorisés en version gratuite
 };
 var SALT = 'carnet-boutique-v1|';
+var HASHES_VIE = /*VIE*/["2394c10a10d59bc4034ebca3ca250f10d1d0a0f482ef4cecf2bc524a36eac56d", "1d32374940f731df4377894a13ad2d248e23e5db25cec57b25de33fbdac97a93", "e93121ec56bac966a2261ac5df25e9e97c576ca545436daf997fffd49ca330c9", "50024184d021d4f824dca77a853bd12914175d5919aed696e83d446e3ec27fad", "733d19130d2d9d3e024da67f15dd1f279575fe4d8a1f2a8f74a204ff721e07d0", "72a9224e31309faa491fe9f78c226e60b57d0e27350f924c90f5e474f12d699f", "76a71c68147a0c3d22982bc98d53b606f9d1b56e107aae7831463f6ec5cebf32", "2f4002f3199a905bab8d260aa197c681bbff78030feba4e211afc6fed1a83df3", "1f07ab96929ad3c810d36dc88c2b18d626f93d318c26c90523106b293c2e59fb", "07e322dd3d00f113300ec7116fa79e42d782e8635b54d5acca57e8775e306474", "ad4c98b19af24728b50cfd59c6ce4e197eefdf803b3e672ada6080791a3f5e76", "04a5b9fd45ed34406f846bb4b77180726328a87b46e593a8ad3c110ed886ac98", "ee72ee5c6fa213970c7f5028639a115f5cc73c7ae514427b230b94988aefa63a", "f7c35afed9fa96a675b87958fbbeebb0f3d01d60a94477aea8309315a38d077f", "b0ddfb851db203b2fc1616098053fbe4f82cee5e8c06bc58086e63c8ce9f38f7", "f0e3eab979ad5da4a0af8e3a74e45327dd8af4cac099f9aeb773fc1600146595", "b1abda5e871643d5d3f77d66687c053f79bf36cbba562a18e0acc53aff462bf0", "0361185fa4b079f5637865f47032350fc7aadca6a900381b72ed610e15758cae", "e878d4ec251ccaa36b95d30f830f687fc7558f762273a854df6c99a0028d9e42", "99b719e124e4a5e3c4411dc3d541fdf2b68549a6edd5658365eb44587fc49db1", "7956b9d12eefbf5226d4b5c6b11fd483e3fba19d393b54ec6c9307a84ca140c8", "a9f23b6df3f905e3f178c0f89ebd15ec7e19d823f53913b244cdeeddf7f54e71", "c59dc53aa07cda31cd71a28010bae4965cc5a886ab7f77a1def523b0f1610212", "7fdb05a8a289cbd51d76d61e02e5436b5e32225b9670538160c265eb825aca76", "254ec564a51602b2bcacff243121495cfce4dd7ae00c43d256b53704ee739cec", "acfb1c5fcefd451166d506e30a62d08bd7a83493eb9354e8ca1fab79ae84818f", "50faf5c1eccba3ceb6f5db8e473f8e49b2e19444102b6fe6d3892eb6c2be3193", "7e84fdcdea548d3321b5187542a8ce42efd89f4f0e03c084743a82e24faf9624", "a25312c01505e2323dfc883090a4beced5e1be2f63314b45bc34aa5a95986c4e", "e2e2cdbdbe770f00cb8d2f3ef9c3436d8669c67ae7d7ab37b998f252aa932ec3"]/*END*/;
 var HASHES = /*HASHES*/["fddc93e2cc205160a0e893f7e63892d13798a67a6b8d84b35aa0055f34e28d5a", "b6290d3317da0ae2a6810decf66ae20289418d399c2f7a35dce3a1fd6d1f1ecb", "7d0e56ae6fe1547d0b1026053f10d0140c8f1cbe0705badc510a7e2667a1ce64", "fb40cfbd6c3358ebe4caa0efdead90afd22f7815e70e0e3ada556ae91faeaf88", "1294263af7027635f3a69f56fe02137374539ab836b2d7d572889728743e3993", "7e31b13e289f474c2267cfdfe6c0fbbdd41adc816322be4b5416a879cf38fd31", "c2d0a65cddb3db16194953f9b2adfa283dedd11ac0e9289b61ea841714d1092d", "86e38ca158db96720dde95bf201bdfd8a33b78f645b58cb5f17540867a45bed0", "63189f914d2d3d4ac2f2a5f759f0b2703bcbabd52112a651b75e655ccbc54314", "490828b4a9ae8a70ee9163fc0ac60e508d4e04c91e2b9bd96d9e01a8b4b5af1b", "4cefafd463e28d855452bd6e9eb2d5729ede9fbf4a22714fcfd30fb7711abf2a", "700e11f43b975c111d57b2c8f938d95607ec46d1677265b8fd12676042d2b28f", "06252cbda5799d934f264620bee312f87c495489a3bb7010399d7d2f2240cb33", "f7bfaa63952f96e921ff8c6ac8b8b110ec07b664b8fef3fe064916699cd94ed1", "83e8e8ee2d80b76908826b662334fb9e5bbad656e6ad68d1622c08d4f4116ba8", "7e7d512e2f032c768d6f4e38696098145fc723c10e43be3feee317cb634aade4", "ccc0f2fd0033d7f497f4ebf5fefbfe54bea1cc510f329401a4d13ec3f4d58a36", "adc399c568f3ce99e5b1fb27b655ad51b04d58b5d075060513af31956f2ebf3c", "a6ed1c4b8d329f074598ef216cad6b6a68f880125d027d7af3271492fc31def4", "98c4712e4055133586a662f27e7756f277e57cb00bdbb9b8aa4a052f0055815b", "29d771baaed59f2d6690ea1374bdd81f713a5329cc98400ecbbab9c8ad0bc6fd", "39f732a5527b662ed14624ca46a576fc860139fdaf5e0f293c865fed26551150", "937711133811a95f68c7d416e49ab8660b8562d7a4d2a0ceebe520b2f30f6115", "8db496708808e850206dd398910cb398fba3509e3821e78b26e8d8d9111b123e", "95115409c77891f667d9f313fa78d3d76f7fb6720551649dd054e35907211ca8", "26c2ed48d72d107c1b574c79780f899d5101382f5ca6e9f0e5d1cb04fc38cf68", "de10d87957d967279871a96b702ebe08e08f110e2fe299e6d855d8606ca48c72", "d0f2f877fe0b92eb5bcadebf3a86125916be8462bde9f378f60cafb8a0dfc429", "2c0a556d229cac756453c44cf8ffd9a6a8937f865d04e9df468c0d76a7ea492c", "64845ebbda26ceba0d37e6b2b432be619956b97d7e85844ff0a4493372d98a20", "72cd31a0602267ecd389673ac65d4e53af53aaf7569561479d224d08cc910ee0", "b542ee856feb7c387c546dc5b7e85d81050d34e5f4e29041e6630764ccd1368c", "8ec4f9b86f8d24b8ab857adb508346bc7fc896e8c9e38f4976dc729473779fba", "5c5d650c02c19ec4bb35dc844f483d3cb1616d8ba6680cf6fc388b53bc5ae06e", "b1d211eca3b7ff768829f313a2471dba653e363b40913dbb9c26c0b505bba804", "545120cd235741786873b6d3ad54e475bd392febbe1eb2fdece1ccdbc12fe1b9", "d61eb831b739809bce0bceef35361aca671f21c255cbe829bcfb1b2b9c6ab5bb", "27283a93bb4c9d871f45f03fece3d5e1805419b05de6426f97b23bc5fd60b220", "871a6de4c1fde695ee6b6d36ad2c96b977170d146942b803c180a2f18d2a89a8", "ecc1a390548e9c3939a0e9e30965d216419e1c05e3c5e8860976d3295e3559a0", "6b34fc0995acf2b9a0b45e968650f9a671e32199ff6e217fe5e819629ee9f14c", "c22f61b2c6946cae3d600ab42929ff8dab9a3490745a8265a253f5372815f7e7", "bb51e9c02ee4623f8a1c16ee08e739df6e7f838886952a7d75437f66d25dfcb1", "af6ed04ba79b18bf15f24752ee0454a075c6a5c93a5b4c4dbacff9fbdde65e04", "cf61644bbfe7c196ae648d0e784f14742b4824292788c5781542933d3b0ae2f9", "2ae30afb8c0a42de8f233b9f0f3b924587ca6ce7e9e0b8041071ee3d786a0153", "e96e24303d9f9bb7148c03c1315d2a145d95c00b920710739c43ae24da6fe3e9", "1b085d5b946dea46d10fbfec3e01a323db4293aa0eb1163bab65288cacaed64e", "3fbebe7e51a3c2ff9f4c00aa2d619172363d4a4440ca987d298214ee1875c173", "e733509d591224447c34093f7264c880135fa39894546e1940dca3011288af25", "9ad3e7aafc2ebfbc2d81169a1919ed4907de9c1912b675a193399a5a2771f30f", "29d641fbc99bd2b444a0a384a4b77da1bbc5310a671fcee74e6b2ae5f2655129", "9b19ad2d31442bb267c0a11c2e8ed2839cc27341aa2a1cf4ab78793f091135d7", "4810ef8795c1c4324b8e493cee220ee0780d03f1d8ef166ce0d77fa64c14016e", "7bb2687feefd6a3e1d048d0a7176eb13a8f7cb1e8899cead4d0206cab68a3ce1", "15a64a6859c9a6c870fd489a7699e4e8842f608cc3866373e16aba302c717abb", "eafeca0c860a5f0c3b47ac877d94cb66d1d21cc7ba8bf2fd3fe90d67b28c39d0", "064e45767d2baa6d499ae215071aa63ffb9c13f8c4de7cc0aa700717bc9aceb1", "717b824e58d017210c80ed957dfda90e05b61f8ded0f00dabb3d9d5417e1c963", "01ecb70a311e9d9faa4474dc6c767a9e502f21d09506a8f5c1637b616c28648e", "2fcca05257ceb84ed3d9629604d1496ee4d05f66963cc05923f428d76ed9478c", "7a302e453e05f74a9aab7a9d128bec8c0f370d43119879095c19def8cafe5f97", "83a3061842cb6580b31540e7835296d417e88f60f6a151a4f186391f577141b2", "1e6b3a3f3ac08027cb6f35d85c661c77f319b595f4e86b4446487fc6ee9bfe96", "7249e646ec9f0af29ec28548efbfe98cefb1b3d9cf17c7d8af1474d85420a0f6", "37591b88c63c9b56b152e4dba6112d12330ff2dda37a461c021f97ca7515334e", "60dc7c9887bdc5e9e59e78848e930d2a87e56c73d49eaf64ac211258efeee2ce", "98138ea76c1c19cb87ed5f653599749336cb493bc12984386dbe502f49d490b8", "e1dc724df4d7df00fe8276fe975b0c2a3695f14448a8724152cb3150be7bcad0", "dda3f4d56d7bfe72917a3fa3f204e2aac18e18c6532572b3c5ad4fc8f91d2158", "a797de4421c4ec1f818a61a81ea232fc015d4b8d195a20dfedfad68f61d45f06", "5448efda8e9bfba0f53d2aeea87fc6f88d89f235b856cc8d0712ed0b3d44af22", "8e0c3291c45238500137ddf8d34be9f3bf740b27c9e3b276787390a41df337f5", "4769713473507aa9b12b5636b7be1c3abc3122ed7a9dbc822df7790f7e1c6d71", "c1582ec2009d2dab12ee04597904db6cc56e060f10220996acd03dd4ddbf6e65", "904639407b12915a4039735c1a17045c2b74a70fbd8e98b4f50830deae6a7407", "9155f743a0d746301c464a412bedb84a663e845d92afb5b64d38b8c522cf7d28", "0b1b04277197db01fd8cbf1d9c97c7862f954553d3234d8b9b54ea836758f64f", "996e9ff131d4e27d4695b7062dfc59bb67c7a15c4025c40cd7ddd8834e70e46f", "289105b5c0539f0e3b1bd9f3b0ef0093af0c803f1cba4981267a5648add6b446", "12bbca7d1a82e371f8843082830ad104bbcd62cdc356b768edbb6ebe110f1045", "6fbb0672a6851e3cd219c5ed017b2188f363d68da053eaf7807292bc2d8a5b85", "21c16caa742d77c8ab6d1893d1640d264606f7ba91046b5d96a12ef87e1effaa", "59b146e18e19a4839e0613fdc2a755ce770a0af290bab1e3eba9aef6d0402664", "3f80968293ef0c11d0d4fe52610e73d5a4469765dd4ead35394c7a54241bbd7b", "1c3c27fe0a499f880adcd08ebae08e8e07db1f1aef3b8455f51baf4be7a02d94", "2b38abf0e83ae1a4e47f4f7e168195d8954de4d8cd217744a5fd14c13c0d0bfa", "fa84b5ea1cc81a014abc63cb4b89ee4834ab2c213c996af28d6a80e427ff8a89", "887a2067e3c305a48f2e3a7d46f1229ddf43daa90c3b7f38261e66b1f3c00738", "21d0e6f65ba914f1932d190bdf910018e7b52181b0a1657148e142afc89b23d1", "30319fd89a0135b00ea9ed1faf9ad596379c2b90ea9f458bd00e76437857ae36", "dca4f495ce28a0f54736e5fb08f27c008342ab123604728fb28836709ef17d50", "c0771901c37d52c38351d2bdf664ae4e39d5f574b2572adac17795bd50f00136", "3f3ff389d17cca63448231d909d2a574741b80091c226079b002d3a7faad902f", "9acaa2f05e55240576fa0426a8fd34b0ac88649b6273dfd1a7c9a4df2fed5558", "a4c74900dc3505ad70c38af57f4d28163e2f20a983d318f691976c00f9bb8d2f", "462a6995af8bb44b7765a48c89c1e4dcb9a2a14b760108419072b3d2cbe89c60", "0b05bba336aaa9d1e1d0c30b4e6b66d61e3517118686febb0b025539b0408da8", "8d70e228896b2439ccb937e9b767ec38fdc05c4cfeef68467e5776b6cf475ec9", "15c0ffb3667571fdb1ac27fe32f6e0082a8bbbb4178c8ed2867baab53c7e582a"]/*END*/;
 /* =============================================================== */
 
@@ -199,7 +200,8 @@ var TYPES = {
 };
 var KIND = {sale:'Vente', expense:'Dépense', credit:'Crédit', payment:'Paiement'};
 var MAXAMT = 999999999;
-var S = {v:2, shop:'', pro:'', seeded:false, entries:[]};
+var PRO_DAYS = 30, DAY = 86400000, MAXLINES = 10000;
+var S = {v:2, shop:'', pro:'', proAt:0, life:0, used:[], seen:0, seeded:false, entries:[]};
 var cur = 'sale', tab = 'caisse', paying = null, delArm = null, wipeArm = false, restoreArm = false;
 var toastT = null, undoId = null, installEvt = null, backupText = '';
 
@@ -211,7 +213,9 @@ function dayKey(ts){var d=new Date(ts);return d.getFullYear()+'-'+(d.getMonth()+
 function dayStart(ts){var d=new Date(ts);d.setHours(0,0,0,0);return d.getTime()}
 function norm(s){return String(s).trim().replace(/\s+/g,' ').toLowerCase()}
 function digits(s){var n=parseInt(String(s).replace(/\D/g,'').slice(0,10),10)||0;return Math.min(n,MAXAMT)}
-function isPro(){return !!S.pro}
+function nowT(){var n=Date.now();if(S.seen&&n<S.seen)n=S.seen;return n}
+function proLeft(){if(S.pro&&S.life)return 99999;if(!S.pro||!S.proAt)return 0;return Math.ceil((S.proAt+PRO_DAYS*DAY-nowT())/DAY)}
+function isPro(){return proLeft()>0}
 
 /* ---------- données : lecture sûre, sauvegarde en double ---------- */
 function sanitize(o){
@@ -225,7 +229,10 @@ function sanitize(o){
     ok.push({id:id,ts:ts,t:e.t,amt:Math.round(amt),who:typeof e.who==='string'?e.who.slice(0,60):'',d:e.d?1:0});
   });
   ok.sort(function(a,b){return a.ts-b.ts});
-  return {v:2,shop:typeof o.shop==='string'?o.shop.slice(0,40):'',pro:typeof o.pro==='string'?o.pro.slice(0,64):'',seeded:true,entries:ok};
+  var used=Array.isArray(o.used)?o.used.filter(function(x){return typeof x==='string'&&x.length===64}).slice(0,200):[];
+  var pro=typeof o.pro==='string'?o.pro.slice(0,64):'',proAt=Number(o.proAt)||0;
+  if(pro&&used.indexOf(pro)<0)used.push(pro);
+  return {v:2,shop:typeof o.shop==='string'?o.shop.slice(0,40):'',pro:pro,proAt:proAt,life:o.life?1:0,used:used,seen:Number(o.seen)||0,seeded:true,entries:ok};
 }
 function seed(){
   var now=Date.now(),D=86400000,e=[];
@@ -239,7 +246,7 @@ function seed(){
   add(1,10,'sale',19000,'Huile et farine');add(1,15,'credit',3500,'Mariam Traoré');add(1,18,'sale',11500,'');
   add(0,8,'sale',8500,'Pain, lait, sucre');add(0,10,'expense',3000,'Crédit téléphone');add(0,11,'sale',14000,'Boissons');
   e.sort(function(a,b){return a.ts-b.ts});
-  return {v:2,shop:'',pro:'',seeded:true,entries:e};
+  return {v:2,shop:'',pro:'',proAt:0,life:0,used:[],seen:0,seeded:true,entries:e};
 }
 function readKey(k){try{var raw=localStorage.getItem(k);return raw?sanitize(JSON.parse(raw)):null}catch(x){return null}}
 var recovered=false, storageOK=true;
@@ -251,7 +258,8 @@ function load(){
   return seed();
 }
 function persist(){
-  if(S.entries.length>5000)S.entries=S.entries.slice(-5000);
+  if(S.entries.length>MAXLINES)S.entries=S.entries.slice(-MAXLINES);
+  var n0=Date.now();if(n0>(S.seen||0))S.seen=n0;
   try{
     var json=JSON.stringify(S);
     localStorage.setItem(KEY,json);
@@ -378,8 +386,8 @@ function renderPlus(){
     (pro?'<div style="margin-top:12px"><button type="button" class="ghost" data-act="bilan-mois">Copier le bilan du mois</button></div>':'<p style="margin-top:10px">Réservé à la version Pro.</p>')+'</div>'+
 
   '<div class="card"><h2>Version '+(pro?'Pro activée':'gratuite')+'</h2>'+
-    (pro?'<p class="ok">Merci ! Clients en dette illimités et bilan du mois disponibles.</p>':
-    '<p>Gratuit : ventes, dépenses et jusqu’à '+CONFIG.limiteGratuite+' clients en dette. Pro ('+esc(CONFIG.prix)+') : clients en dette illimités et bilan du mois.</p>'+buy+
+    (pro?'<p class="ok">Merci ! Clients en dette illimités et bilan du mois disponibles. '+(S.life?'Activé à vie.':'Il reste '+proLeft()+' jour'+(proLeft()>1?'s':'')+'.')+'</p>':
+    (S.pro?'<p class="err">Votre Pro est terminé. Prenez un nouveau code pour continuer.</p>':'')+'<p>Gratuit : ventes, dépenses et jusqu’à '+CONFIG.limiteGratuite+' clients en dette. Pro ('+esc(CONFIG.prix)+') : clients en dette illimités et bilan du mois.</p>'+buy+
     '<label class="field" style="margin-top:12px"><span>Code Pro</span><input type="text" id="codein" maxlength="12" autocapitalize="characters" placeholder="XXXX-XXXX"></label>'+
     '<p class="err" id="codeerr" role="alert"></p><button type="button" class="ghost" data-act="activate">Activer le code</button>')+'</div>'+
 
@@ -431,14 +439,16 @@ function activate(){
   var raw=($('#codein').value||'').toUpperCase().replace(/[^A-Z0-9]/g,''),err=$('#codeerr');
   if(raw.length!==8){err.textContent='Le code a 8 lettres et chiffres. Vérifiez-le.';return}
   sha256(SALT+raw).then(function(h){
-    if(HASHES.indexOf(h)<0){err.textContent='Code non reconnu. Vérifiez-le ou demandez-en un autre.';return}
-    S.pro=h;persist();render();toast('Version Pro activée. Merci !');
+    var vie=HASHES_VIE.indexOf(h)>=0;
+    if(HASHES.indexOf(h)<0&&!vie){err.textContent='Code non reconnu. Vérifiez-le ou demandez-en un autre.';return}
+    if((S.used||[]).indexOf(h)>=0){err.textContent='Ce code a déjà été utilisé sur cet appareil. Demandez un nouveau code pour renouveler.';return}
+    S.pro=h;S.proAt=nowT();S.life=vie?1:0;S.used=(S.used||[]).concat([h]);persist();render();toast(vie?'Version Pro à vie activée. Merci !':'Version Pro activée pour '+PRO_DAYS+' jours. Merci !');
   },function(){err.textContent='Activation impossible sur ce navigateur. Ouvrez la page dans Chrome.'});
 }
 
 /* ---------- sauvegarde / restauration ---------- */
 function makeBackup(){
-  var json=JSON.stringify({v:2,shop:S.shop,pro:S.pro,entries:S.entries.filter(function(e){return !e.d})});
+  var json=JSON.stringify({v:2,shop:S.shop,pro:S.pro,proAt:S.proAt,life:S.life,used:S.used,seen:S.seen,entries:S.entries.filter(function(e){return !e.d})});
   return 'CARNET1:'+btoa(unescape(encodeURIComponent(json)));
 }
 function parseBackup(txt){
@@ -498,7 +508,7 @@ document.addEventListener('click',function(ev){
   else if(a==='install'&&installEvt){installEvt.prompt();installEvt=null;render()}
   else if(a==='wipe'){
     if(!wipeArm){wipeArm=true;renderPlusForce();setTimeout(function(){if(wipeArm){wipeArm=false;renderPlusForce()}},4000);return}
-    S={v:2,shop:S.shop,pro:S.pro,seeded:true,entries:[]};wipeArm=false;persist();render();toast('Toutes les données ont été effacées');
+    S={v:2,shop:S.shop,pro:S.pro,proAt:S.proAt,life:S.life,used:S.used,seen:S.seen,seeded:true,entries:[]};wipeArm=false;persist();render();toast('Toutes les données ont été effacées');
   }
 });
 function renderPlusForce(){var f=document.activeElement;if(f&&f.blur)f.blur();renderPlus()}
@@ -527,7 +537,8 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)rend
 setInterval(function(){if(!document.hidden&&document.activeElement===document.body)render()},60000);
 
 /* ---------- démarrage ---------- */
-S=load();setType('sale');render();
+S=load();if(S.pro&&!S.proAt){S.proAt=Date.now();persist()}
+setType('sale');render();
 if(recovered)toast('Vos données ont été récupérées depuis la dernière copie.');
 else if(!storageOK)toast('Ce navigateur bloque l’enregistrement. Quittez la navigation privée.');
 try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(x){}
