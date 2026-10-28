@@ -1,7 +1,7 @@
 {
   "name": "Carnet Boutique",
   "short_name": "Carnet",
-  "description": "Carnet de caisse pour petit commerçant : ventes, dépenses et dettes clients.",
+  "description": "Carnet de caisse pour petit commerçant : ventes, dépenses, dettes clients et stock.",
   "lang": "fr",
   "start_url": "./index.html",
   "scope": "./",

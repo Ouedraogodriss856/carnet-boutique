@@ -1,5 +1,5 @@
 /* Service worker : le carnet marche sans connexion. Changez VERSION à chaque mise à jour du site. */
-var VERSION = 'cb-v2';
+var VERSION = 'cb-v3';
 var FILES = ['./', './index.html', './manifest.json'];
 var OPTIONAL = ['./icon-192.png', './icon-512.png'];
 
